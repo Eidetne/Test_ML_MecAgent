@@ -1,0 +1,34 @@
+1. Understanding the exercise :
+
+Goal Of the project : 
+
+I tasked with building a machine learning model that does :
+
+    Input : a rendred image with of 3D model
+    Output : The CadQuery script that generates that 3D model
+
+This is a multi-modal learning task:
+
+    Image → sequence of structured tokens (code)
+    Output needs precise syntax, not vague summaries
+
+our model must:
+
+    Understand 3D shapes from 2D images
+    Learn the syntax and logic of CadQuery
+    Translate vision into code
+
+2. Data Structure
+
+I am given:
+
+147,000 image/code pairs
+
+Each pair looks like:
+
+    Image file "box001.png"
+
+    CadQuery code "cq.Workplane('XY').box(1,2,3)"
+
+
+I am going to do a Fine-tuning
