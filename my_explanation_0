@@ -31,4 +31,29 @@ Each pair looks like:
     CadQuery code "cq.Workplane('XY').box(1,2,3)"
 
 
-I am going to do a Fine-tuning
+3. The baseline architecture :
+
+1. Encoder: Pretrained CNN (ResNet50 for example ) to extract image features.
+2. Decoder: Transformer or LSTM to generate CadQuery code.
+
+Define the model (ResNet50 + GPT2 for example ) 
+
+Train and evaluate the model
+
+____________________________________________________________________________________________________________________________________________
+
+Let's enhance the model : 
+
+4. Enhanced Model : 
+
+1. Fine-tune the ResNet encoder by enabling gradient updates (fine_tune=True), which can help the model learn better image features for your dataset.
+
+2. Added LayerNorm + Dropout after the image feature projection to stabilize training and regularize.
+
+3. Added a learnable positional embedding to the image embedding token to help the transformer decoder better understand the image context.
+
+4. Dropout added in the final embedding layer for regularization.
+
+___________________________________________________________________________________________________________________________________________________
+
+5. If I have had more time, I would du a summary with the results of trainig and evaluation of the two model and compare them
